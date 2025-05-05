@@ -7,7 +7,7 @@ function App() {
 
     const getWeather = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/weather?city=${city}`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/weather?city=${city}`);
             setWeather(res.data);
         } catch (err) {
             alert("City not found");
